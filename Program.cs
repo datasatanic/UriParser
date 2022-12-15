@@ -34,7 +34,7 @@ Console.ForegroundColor = def_color;
 Console.WriteLine(uri.Port);
 
 Console.ForegroundColor = ConsoleColor.Red;
-Console.WriteLine($"Path: ");
+Console.Write($"Path: ");
 Console.ForegroundColor = def_color;
 Console.WriteLine(uri.AbsolutePath);
 
