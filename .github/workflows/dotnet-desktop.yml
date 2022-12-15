@@ -92,4 +92,4 @@ jobs:
         # Artifact name
         name: uriparser
         # Destination path
-        path: bin/Release/net7.0/osx-x64/publish/uriparser
+        path: /Users/runner/work/UriParser/UriParser/bin/Release/net7.0/osx-x64/publish/uriparser
