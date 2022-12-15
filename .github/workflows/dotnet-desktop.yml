@@ -86,10 +86,10 @@ jobs:
     - name: Publish
       run: dotnet publish --sc -c Release -r osx-x64 -p:PublishSingleFile=true -p:PublishReadyToRun=true -p:PublishTrimmed=true
       
-    - name: Download a Build Artifact
-      uses: actions/download-artifact@v3.0.1
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
       with:
         # Artifact name
-        name: uriparser
+        name: uriparser-binary
         # Destination path
         path: /Users/runner/work/UriParser/UriParser/bin/Release/net7.0/osx-x64/publish/uriparser
