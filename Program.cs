@@ -39,12 +39,17 @@ Console.ForegroundColor = def_color;
 Console.WriteLine(uri.AbsolutePath);
 
 Console.ForegroundColor = ConsoleColor.Red;
-Console.WriteLine("Query Params:");
-foreach (var param in uri.Query[1..].Split('&'))
+
+
+if (uri.Query != string.Empty)
 {
-    string[] p = param.Split('=');
-    Console.ForegroundColor = ConsoleColor.Green;
-    Console.Write($"\t{p[0]} = ");
-    Console.ForegroundColor = def_color;
-    Console.WriteLine(p[1]);
+    Console.WriteLine("Query Params:");
+    foreach (var param in uri.Query[1..].Split('&'))
+    {
+        string[] p = param.Split('=');
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.Write($"\t{p[0]} = ");
+        Console.ForegroundColor = def_color;
+        Console.WriteLine(p[1]);
+    }
 }
