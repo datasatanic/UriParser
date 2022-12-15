@@ -5,6 +5,8 @@
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <AssemblyName>uriparser</AssemblyName>
+        <RootNamespace>uriparser</RootNamespace>
     </PropertyGroup>
 
 </Project>

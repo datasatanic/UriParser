@@ -6,18 +6,45 @@ if (args.Length == 0)
 }
 
 Console.Title = "UriParser";
-Uri uri = new Uri(args[0]);
 
-Console.WriteLine($"Uri: {uri}");
+Uri uri = new Uri(System.Net.WebUtility.UrlDecode(args[0]));
+
+
 Console.WriteLine();
-Console.WriteLine($"Scheme: {uri.Scheme}");
-Console.WriteLine($"Host: {uri.Host}");
-Console.WriteLine($"Port: {uri.Port}");
-Console.WriteLine($"Path: {uri.AbsolutePath}");
+var def_color = Console.ForegroundColor;
+Console.ForegroundColor = ConsoleColor.Red;
+Console.Write("Uri: ");
+Console.ForegroundColor = def_color;
+Console.WriteLine(uri);
+Console.WriteLine();
+
+Console.ForegroundColor = ConsoleColor.Red;
+Console.Write($"Scheme: ");
+Console.ForegroundColor = def_color;
+Console.WriteLine(uri.Scheme);
+
+Console.ForegroundColor = ConsoleColor.Red;
+Console.Write($"Host: ");
+Console.ForegroundColor = def_color;
+Console.WriteLine(uri.Host);
+
+Console.ForegroundColor = ConsoleColor.Red;
+Console.Write($"Port: ");
+Console.ForegroundColor = def_color;
+Console.WriteLine(uri.Port);
+
+Console.ForegroundColor = ConsoleColor.Red;
+Console.WriteLine($"Path: ");
+Console.ForegroundColor = def_color;
+Console.WriteLine(uri.AbsolutePath);
+
+Console.ForegroundColor = ConsoleColor.Red;
 Console.WriteLine("Query Params:");
 foreach (var param in uri.Query[1..].Split('&'))
 {
     string[] p = param.Split('=');
-    Console.WriteLine($"\t{p[0]}= {p[1]}");
+    Console.ForegroundColor = ConsoleColor.Green;
+    Console.Write($"\t{p[0]} = ");
+    Console.ForegroundColor = def_color;
+    Console.WriteLine(p[1]);
 }
-
